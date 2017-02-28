@@ -7,14 +7,20 @@ dependencies:
   - ipython
   - jupyter
   - pandas
+  - pillow
   - numpy
   - scipy
   - ffmpeg
   - html5lib
+  - BeautifulSoup4
+  - lxml
   - ipywidgets
   - matplotlib
   - bokeh
   - nodejs
   - bqplot
   - tqdm
-  - pyproj  
+  - pyproj
+  - icu
+  - xlrd
+
