@@ -1,0 +1,20 @@
+name: etc_math
+channels:
+  - conda-forge
+  - bokeh
+dependencies:
+  - python
+  - ipython
+  - jupyter
+  - pandas
+  - numpy
+  - scipy
+  - ffmpeg
+  - html5lib
+  - ipywidgets
+  - matplotlib
+  - bokeh
+  - nodejs
+  - bqplot
+  - tqdm
+  - pyproj  
