@@ -1,0 +1,1 @@
+show(img_array[::2, ::2])
