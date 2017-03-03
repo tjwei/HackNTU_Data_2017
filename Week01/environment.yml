@@ -1,0 +1,11 @@
+name: numpy_intro
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - ipython
+  - jupyter
+  - pillow
+  - numpy
+  - matplotlib
+
