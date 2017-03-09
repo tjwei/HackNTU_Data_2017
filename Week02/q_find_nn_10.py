@@ -10,8 +10,8 @@ for i in range(N):
     idx = _.argmin()
     print("train_X[{}]".format(idx))
     showX(train_X[idx])
-    print("train_X[{}] = {}".format(idx, train_Y[idx]))
-    print("train_X[{}] = {}".format(i, test_Y[i]))
-    if train_Y[idx] == test_Y[i]:
+    print("train_X[{}] = {}".format(idx, train_y[idx]))
+    print("train_X[{}] = {}".format(i, test_y[i]))
+    if train_y[idx] == test_y[i]:
         correct+=1
 print("Accuracy", correct/N)
