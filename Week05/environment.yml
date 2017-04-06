@@ -1,0 +1,14 @@
+name: spynner
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - ipython
+  - jupyter
+  - pillow
+  - numpy
+  - matplotlib
+  - pyside
+  - six
+
+
