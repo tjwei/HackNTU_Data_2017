@@ -10,5 +10,8 @@ dependencies:
   - matplotlib
   - pyside
   - six
+  - scikit-learn
+  - pip:
+    - https://github.com/tjwei/spynner/archive/master.zip
 
 
