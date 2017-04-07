@@ -11,6 +11,7 @@ model.add(Dense(units=10, activation="softmax"))
 model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
+display(SVG(model_to_dot(model, show_shapes=True).create(prog='dot', format='svg')))
 model.fit(train_X, train_Y, validation_data=(validation_X, validation_Y), batch_size=128, epochs=15)
 rtn = model.evaluate(test_X, test_Y)
 print("\ntest accuracy=", rtn[1])

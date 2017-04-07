@@ -26,7 +26,7 @@ def common_name_space(n1, n2):
     return "/".join(rtn)
 
 import html
-def tfdot(graph=None):
+def tfdot(graph=None, size=(10,30)):
     def get_dot_data(name_space):
         if name_space !='':
             parent, _ = split_name(name_space)
@@ -38,7 +38,7 @@ def tfdot(graph=None):
         name = "cluster_"+name_space if name_space else 'root'
         dot = Digraph(comment="subgraph: "+name_space, name=name, 
                 graph_attr={"ratio":"compress",
-                "size":"10,30"}
+                "size":"{},{}".format(*size)}
                 )
         dot.body.append('label="%s"'%name_space)
         dot_data = dot_data_dict[name_space]
