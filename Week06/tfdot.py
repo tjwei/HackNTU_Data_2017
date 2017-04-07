@@ -25,7 +25,7 @@ def common_name_space(n1, n2):
         rtn.append(ns1[i])
     return "/".join(rtn)
 
-
+import html
 def tfdot(graph=None):
     def get_dot_data(name_space):
         if name_space !='':
@@ -36,7 +36,10 @@ def tfdot(graph=None):
 
     def update_dot(name_space=''):
         name = "cluster_"+name_space if name_space else 'root'
-        dot = Digraph(comment="subgraph: "+name_space, name=name)
+        dot = Digraph(comment="subgraph: "+name_space, name=name, 
+                graph_attr={"ratio":"compress",
+                "size":"10,30"}
+                )
         dot.body.append('label="%s"'%name_space)
         dot_data = dot_data_dict[name_space]
         for s in dot_data['subgraphs']:
@@ -61,8 +64,16 @@ def tfdot(graph=None):
             color_table[op.type] = new_color
         color = color_table.get(op.type, "white")
         name_space, name = split_name(op.name)
+        outputs_label = "".join("<TR><TD>output:</TD><TD>{} {}</TD></TR>".format(
+            html.escape(str(o.shape)), html.escape(o.dtype.name)) for o in op.outputs)
+        name_label = "<TD>{}</TD></TR>".format(name)
+        op_label = "<TR><TD>{}:</TD>".format(op.node_def.op)
+        label = '''< 
+        <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+        {}{}{}</TABLE>  >'''.format( op_label, name_label, outputs_label)
         dot_data = get_dot_data(name_space)
-        dot_data['nodes'].append(dict(name=op.name,  label=name, style="filled", fillcolor=color))
+        dot_data['nodes'].append(dict(name=op.name,  
+                        label=label, style="filled", fillcolor=color))
     
     for op in graph.get_operations():
         for i, ip in enumerate(op.inputs):

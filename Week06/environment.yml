@@ -1,5 +1,6 @@
 name: keras
 channels:
+- conda-forge
 - defaults
 dependencies:
 - graphviz
@@ -10,9 +11,9 @@ dependencies:
 - pillow
 - pip
 - scikit-learn
+- tensorflow
+- theano
+- keras
 - pip:
   - pydot-ng
-  - graphviz
-  - tensorflow
-  - theano
-  - keras
+  - graphviz  
