@@ -1,0 +1,6 @@
+np.random.seed(1234)
+A = np.random.randint(-2,3,size=(6,4))
+b = np.random.randint(-2,3,size=(6))
+C = np.random.randint(-2,3,size=(3,6))
+d = np.random.randint(-2,3,size=(3))
+x = np.random.randint(-2,3,size=(4))

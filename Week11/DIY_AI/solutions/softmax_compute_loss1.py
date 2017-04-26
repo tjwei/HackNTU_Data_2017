@@ -1,0 +1,1 @@
+loss = -np.log(q[y])
