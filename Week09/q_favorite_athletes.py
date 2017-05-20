@@ -3,7 +3,7 @@ friends = graph.get_object('me', fields=['friends.limit(1000)'])['friends']['dat
 stat = Counter()
 for f in friends:
     key = "favorite_athletes"
-    obj = graph.get_object(f['id'], fields=['id','name', key])
+    obj = graph.get_object(f['id'], fields=json.dumps(['id','name', key]))
     if key in obj:
         print(f['id'], f['name'])
         for item in obj[key]:
