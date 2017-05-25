@@ -1,0 +1,15 @@
+name: opencv_intro
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - ipython
+  - jupyter
+  - pillow
+  - numpy
+  - matplotlib
+  - opencv
+  - dlib
+  - scipy
+  - ipywidgets
+
